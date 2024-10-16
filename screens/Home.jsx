@@ -92,7 +92,7 @@ const Home = ({navigation}) => {
           <Image resizeMode='cover' style={{width: 120, height: 30}} source={Logo}/>
         </View>
 
-        <TouchableOpacity style={styles.profile}>
+        <TouchableOpacity onPress={() => navigation.navigate('profile')} style={styles.profile}>
           <Image style={{width: "100%", height: "100%", borderRadius: 50}} resizeMode='cover' source={Profile}/>
         </TouchableOpacity>
       </View>
