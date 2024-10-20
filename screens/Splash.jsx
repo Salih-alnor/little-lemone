@@ -34,10 +34,7 @@ const [isLoading, setIsLoading] = useState(false);
        },[])
   return (
     <View style={{backgroundColor: '#D9D9D9', flex: 1, alignItems: 'center', justifyContent: 'center', flexDirection: "column"}}>
-     {/* <View>
-        <Image source={Logo} style={{width: 300, height: 70}}/>
-     </View> */}
-      <ActivityIndicator size={40} color={"#495E57"} style={{marginTop: 30, fontWeaght: "bold" }}/>
+     
     </View>
   )
 }

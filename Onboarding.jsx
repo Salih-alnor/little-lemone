@@ -20,9 +20,21 @@ const Onboarding = ({navigation}) => {
 
   const sendDataToLocalStorage = async (data) => {
        try {
-        const userInfo = JSON.stringify(data)
-        await AsyncStorage.setItem("info", userInfo);
-        console.log(userInfo)
+
+        const userInfo = {
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          phoneNumber: "",
+          emailNotifications: {
+            orderStatus: false,
+            passwordChange: false,
+            specialOffers: false,
+            newsletter: false
+          }
+        }
+        await AsyncStorage.setItem("info", JSON.stringify(userInfo));
+        
         await navigation.navigate("home")
         
        } catch (error) {
