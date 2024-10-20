@@ -39,16 +39,20 @@ const Profile = ({ navigation }) => {
         setPasswordChange(info.emailNotifications.passwordChange);
         setSpecialOffers(info.emailNotifications.specialOffers);
         setNewsletter(info.emailNotifications.newsletter);
-      } catch (error) {}
+      } catch (error) {
+        console.log(error)
+      }
     };
     getInfo();
-  }, [navigation]);
+  }, []);
 
   const logOut = async () => {
     try {
       await AsyncStorage.clear();
       navigation.navigate("onboarding");
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   const saveInfo = async() => {
@@ -69,7 +73,7 @@ const Profile = ({ navigation }) => {
       await AsyncStorage.setItem("info", JSON.stringify(newInfo))
       navigation.navigate("home")
     } catch (error) {
-      
+      console.log(error)
     }
   }
 
